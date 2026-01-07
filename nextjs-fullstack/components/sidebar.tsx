@@ -14,7 +14,7 @@ export default function Sidebar({
         { name: "Settings", href:"/settings", icon: Settings },
     ];
     return (
-        <div className="fixed left-0 top-0 bg-gray-900 text-white w-84 min-h-screen p-6 z-10">
+        <div className="fixed left-0 top-0 bg-gray-900 text-white w-64 min-h-screen p-6 z-10">
             <div className="mb-8">
                 <div className="flex items-center space-x-2 mb-4">
                     <BarChart3 className="w-7 h-7"/>
