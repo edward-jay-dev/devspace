@@ -1,6 +1,9 @@
 import Sidebar from "@/components/sidebar";
 import { getCurrentUser } from "@/lib/auth";
+<<<<<<< HEAD
 import Link from "next/link";
+=======
+>>>>>>> 1bd3d619b8b18c898c72deb1d5fca9af0ebb2450
 
 export default async function AddProductPage() {
   const user = await getCurrentUser();
