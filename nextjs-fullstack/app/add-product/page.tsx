@@ -1,9 +1,7 @@
 import Sidebar from "@/components/sidebar";
+import { createProduct } from "@/lib/actions/products";
 import { getCurrentUser } from "@/lib/auth";
-<<<<<<< HEAD
 import Link from "next/link";
-=======
->>>>>>> 1bd3d619b8b18c898c72deb1d5fca9af0ebb2450
 
 export default async function AddProductPage() {
   const user = await getCurrentUser();
@@ -27,7 +25,7 @@ export default async function AddProductPage() {
           </div>
           <div className="max-w-2xl">
             <div className="bg-white rounded-lg border border-gray-200 p-6">
-              <form className="space-y-6">
+              <form className="space-y-6" action={createProduct}>
                 <div>
                   <label
                     htmlFor="name"
@@ -94,7 +92,6 @@ export default async function AddProductPage() {
                     type="text"
                     id="sku"
                     name="sku"
-                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:order-transparent"
                     placeholder="Enter SKU"
                   />
@@ -111,7 +108,6 @@ export default async function AddProductPage() {
                     id="lowStockAt"
                     name="lowStockAt"
                     min="0"
-                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:order-transparent"
                     placeholder="Enter low stock threshold"
                   />
