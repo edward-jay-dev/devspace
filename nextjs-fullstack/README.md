@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Inventory Management Application
+
+```bash
+cd nextjs-fullstack/
+npm run dev
+```
+
 ## Getting Started
 
 First, run the development server:
@@ -43,3 +50,4 @@ npx @stackframe/init-stack . --no-browser
 ### Migration
 
 npx prisma migrate dev --name init
+
