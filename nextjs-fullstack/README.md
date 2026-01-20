@@ -7,6 +7,26 @@ cd nextjs-fullstack/
 npm run dev
 ```
 
+## Polaris
+
+nodejs versions used
+```bash
+$ node -v
+v22.20.0
+$ npx -v
+11.6.2
+$ npm -v
+11.6.2
+```
+
+using corepack:
+```bash
+export PATH="PATH_TO_/node-v22.20.0-win-x64/":$PATH
+alias npm="corepack npm"
+alias npx="corepack npx"
+```
+
+
 ## Getting Started
 
 First, run the development server:
