@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Darker_Grotesque, Geist, Geist_Mono, IBM_Plex_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
-import {dark } from "@clerk/themes";
-import { ConvexClientProvider } from "@/components/convex-client-provider";
+import { Providers } from "@/components/providers";
 
 import "./globals.css";
 
@@ -29,41 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${plexMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ConvexClientProvider>
-          <ClerkProvider
-          appearance={{
-            theme: dark,
-          }}>
-          <header>
-            <Show when="signed-out">
-              <SignInButton />
-              <SignUpButton>
-                <button>
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
-          </header>
-          {children}
-        </ClerkProvider>
-        </ConvexClientProvider>
-        </ThemeProvider>
+          <Providers>
+            {children}
+          </Providers>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
