@@ -3,8 +3,7 @@ import { generateText } from "ai";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 
 const googleAI = createGoogleGenerativeAI({
-    //apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY
-    apiKey: "AIzaSyDRr5U31tCbXkTfLCO6KfxvtYF_pzAYUyE",
+    apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY
 });
 
 export async function POST() {
