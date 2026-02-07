@@ -21,8 +21,20 @@ export default function DemoPage() {
         await fetch("/api/demo/background", {
             method: "POST",
         });
-        setLoading(false);
+        setLoading2(false);
     }
+
+    const handleClientError = () => {
+        throw new Error("Client error: Something went wrong on the client!");
+    };
+
+    const handleApiError = async () => {
+        await fetch("/api/demo/error", { method: "POST" });
+    };
+
+    const handleIngestError = async () => {
+        await fetch("/api/demo/inngest-error", { method: "POST" });
+    };
 
     return (
         <div className="p-8 space-x-4">
@@ -32,6 +44,22 @@ export default function DemoPage() {
             <Button disabled={loading2} onClick={handleBackground}>
                 { loading2 ? "loading..." : "Background" }
             </Button>
+            <Button 
+                variant="destructive"
+                onClick={handleClientError}>
+                Client Error
+            </Button>
+            <Button
+                variant="destructive"
+                onClick={handleApiError}>
+                API Error
+            </Button>
+            <Button
+                variant="destructive"
+                onClick={handleIngestError}>
+                Ingest Error
+            </Button>
+
         </div>
     );
 };
