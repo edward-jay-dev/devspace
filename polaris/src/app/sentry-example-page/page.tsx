@@ -1,5 +1,7 @@
 "use client";
 
+// localhost:3000/sentry-example-page
+
 import * as Sentry from "@sentry/nextjs";
 import Head from "next/head";
 import { useEffect, useState } from "react";
