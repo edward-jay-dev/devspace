@@ -4,7 +4,11 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 
+import * as Sentry from "@sentry/nextjs";
+import { useAuth } from "@clerk/nextjs";
+
 export default function DemoPage() {
+    const { userId } = useAuth();
     const [loading, setLoading] = React.useState(false);
     const [loading2, setLoading2] = React.useState(false);
     
@@ -17,7 +21,7 @@ export default function DemoPage() {
     }
 
     const handleBackground = async () => {
-        setLoading(true);
+        setLoading2(true);
         await fetch("/api/demo/background", {
             method: "POST",
         });
@@ -25,6 +29,7 @@ export default function DemoPage() {
     }
 
     const handleClientError = () => {
+        Sentry.logger.info("User attempting to click on client function", { userId });
         throw new Error("Client error: Something went wrong on the client!");
     };
 

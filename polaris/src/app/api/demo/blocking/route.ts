@@ -9,7 +9,12 @@ const googleAI = createGoogleGenerativeAI({
 export async function POST() {
     const response = await generateText({
         model: googleAI('gemini-2.5-flash'),
-        prompt: 'Write a vegetarian lasagna recipe for 4 peopel.'
+        prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+        experimental_telemetry: {
+            isEnabled: true,
+            recordInputs: true,
+            recordOutputs: true,
+        }
     });
 
     return Response.json({ response });
